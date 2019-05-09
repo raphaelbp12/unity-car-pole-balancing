@@ -10,11 +10,17 @@ public class CarController : MonoBehaviour
     public GameObject poleGO;
     public GameObject carGO;
 
-    public float joinAngle;
-    public float joinAngleSpeed;
+    public float jointAngle;
+    public float jointAngleSpeed;
     public float distance;
+    public bool gameover;
+
+    public float force;
 
     public Genome genome;
+    public int ticks = 0;
+    public int maxLifeTicks = 3000;
+    public int maxDistance = 20;
 
     Rigidbody r;
     HingeJoint joint;
@@ -33,15 +39,48 @@ public class CarController : MonoBehaviour
     void Update()
     {
     }
+
     void FixedUpdate()
     {
-        float force = Mathf.Sin(w * Time.realtimeSinceStartup) * amplitude;
+        ticks = ticks + 1;
+
+        jointAngle = joint.angle;
+        jointAngleSpeed = joint.velocity;
+        distance = Vector3.Distance(carGO.transform.position, Vector3.zero);
+
+        double[] inputs = { jointAngle,  jointAngleSpeed, distance};
+        force = (float)genome.EvaluateNeuralNetwork(inputs)[0] * amplitude;
 
         r.AddForce(Vector3.forward * force);
 
-        joinAngle = joint.angle;
-        joinAngleSpeed = joint.velocity;
+        CalcGameover();
+    }
 
-        distance = Vector3.Distance(transform.position, Vector3.zero);
+    bool CalcGameover()
+    {
+        if (gameover)
+        {
+            return gameover;
+        }
+
+        if (distance > maxDistance)
+            setGameover("maxDistance");
+
+        if (ticks > maxLifeTicks)
+            setGameover("maxLifeTimeSec");
+
+
+        return gameover;
+    }
+
+    void setGameover(string reason)
+    {
+        Debug.Log("setGameoverCalled " + reason);
+        if (!gameover)
+        {
+            gameover = true;
+            gameObject.SetActive(false);
+            UnityEngine.Object.Destroy(gameObject);
+        }
     }
 }

@@ -11,7 +11,7 @@ public class GameRules : MonoBehaviour
 
     public int popSize = 10;
 
-    public int numInputs = 4;
+    public int numInputs = 3;
     public int numOuputs = 1;
 
     public List<CarController> cars = new List<CarController>();

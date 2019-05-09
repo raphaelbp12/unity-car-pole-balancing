@@ -49,9 +49,14 @@ MonoBehaviour:
   amplitude: 10
   poleGO: {fileID: 4430028924648817449}
   carGO: {fileID: 4430028924202450207}
-  joinAngle: 0
-  joinAngleSpeed: 0
+  jointAngle: 0
+  jointAngleSpeed: 0
   distance: 0
+  gameover: 0
+  force: 0
+  ticks: 0
+  maxLifeTicks: 3000
+  maxDistance: 20
 --- !u!1 &4430028924202450207
 GameObject:
   m_ObjectHideFlags: 0
