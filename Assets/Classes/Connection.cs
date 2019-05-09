@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Classes
 {
-    class Connection
+    public class Connection
     {
         public int innovationNumber;
         public int input;

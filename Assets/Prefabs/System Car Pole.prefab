@@ -9,7 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4430028923585116766}
-  m_Layer: 0
+  - component: {fileID: 4593957787991233535}
+  m_Layer: 8
   m_Name: System Car Pole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32,6 +33,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4593957787991233535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4430028923585116767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e5c90178cdcec44a8414bd14dfe971a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  w: 2.5
+  amplitude: 10
+  poleGO: {fileID: 4430028924648817449}
+  carGO: {fileID: 4430028924202450207}
+  joinAngle: 0
+  joinAngleSpeed: 0
+  distance: 0
 --- !u!1 &4430028924202450207
 GameObject:
   m_ObjectHideFlags: 0
@@ -45,8 +65,7 @@ GameObject:
   - component: {fileID: 4430028924202450200}
   - component: {fileID: 4430028924202450201}
   - component: {fileID: 4430028924202450206}
-  - component: {fileID: 4430028924202450213}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Car
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,21 +160,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
---- !u!114 &4430028924202450213
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4430028924202450207}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e5c90178cdcec44a8414bd14dfe971a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  w: 2.5
-  amplitude: 10
-  poleGO: {fileID: 4430028924648817449}
 --- !u!1 &4430028924648817449
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,7 +174,7 @@ GameObject:
   - component: {fileID: 4430028924648817450}
   - component: {fileID: 4430028924648817451}
   - component: {fileID: 4430028924648817448}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pole
   m_TagString: Untagged
   m_Icon: {fileID: 0}

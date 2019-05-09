@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Classes
 {
-    class Genome
+    public class Genome
     {
         public List<Neuron> neurons = new List<Neuron>();
         public List<Connection> connections = new List<Connection>();

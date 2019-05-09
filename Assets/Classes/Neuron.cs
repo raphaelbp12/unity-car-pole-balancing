@@ -13,7 +13,7 @@ namespace Classes
         Hidden
     }
 
-    class Neuron
+    public class Neuron
     {
         public int id;
         public NodeType nodeType;

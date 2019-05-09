@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Classes
 {
-    class Population
+    public class Population
     {
         public List<Genome> population = new List<Genome>();
         public int popSize;
